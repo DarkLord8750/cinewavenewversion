@@ -1,0 +1,57 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --netflix-red: #E50914;
+  --netflix-black: #000000;
+  --netflix-dark: #141414;
+  --netflix-gray: #808080;
+  --netflix-light-gray: #e5e5e5;
+  --netflix-white: #FFFFFF;
+}
+
+body {
+  background-color: var(--netflix-dark);
+  color: var(--netflix-white);
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+
+/* Hide scrollbars but keep functionality */
+* {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+*::-webkit-scrollbar {
+  display: none;
+}
+
+@layer components {
+  .netflix-button {
+    @apply bg-netflix-red text-netflix-white font-medium py-2 px-6 rounded hover:bg-opacity-80 transition-all;
+  }
+  
+  .netflix-input {
+    @apply bg-[#333] text-netflix-white p-4 rounded border border-netflix-gray focus:border-netflix-white outline-none w-full;
+  }
+
+  .netflix-card {
+    @apply relative overflow-hidden rounded transition-all duration-300 ease-in-out;
+  }
+  
+  .netflix-card:hover {
+    @apply z-10 scale-110 shadow-xl;
+  }
+
+  .row-container {
+    @apply px-4 md:px-16;
+  }
+  
+  .row-title {
+    @apply text-xl md:text-2xl font-bold text-netflix-white py-4;
+  }
+}
